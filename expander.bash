@@ -5,7 +5,7 @@ function playnote() {
   DURATION=$2
 
   echo "noteon 1 $NOTE 100" >  /dev/tcp/localhost/9988
-  sleep DURATION
+  sleep $DURATION
   echo "noteoff 1 $NOTE" >  /dev/tcp/localhost/9988
 }
 
