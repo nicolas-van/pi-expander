@@ -13,14 +13,22 @@ function playnote() {
 
 trap "kill 0" EXIT
 
-fluidsynth -is -o "shell.port=9988" --gain 2 --audio-driver=alsa -z=64 "/usr/share/sounds/sf2/FluidR3_GM.sf2" &
+fluidsynth -is -o "shell.port=9988" -o "synth.polyphony=10" -R off -C off --gain 1 --audio-driver=alsa -z=64 "/usr/share/sounds/sf2/FluidR3_GM.sf2" &
 
 sleep 10
 aconnect 20 128
 
+amixer cset numid=1 - 100%
+
+playnote 60 0.1
+playnote 60 0.1
+playnote 60 0.1
+playnote 60 0.4
+playnote 56 0.4
+playnote 58 0.4
 playnote 60 0.2
-playnote 67 0.2
-playnote 72 0.2
+playnote 58 0.1
+playnote 60 0.8
 
 while [ 1 ];
 do

@@ -1,0 +1,10 @@
+[Unit]
+Description=expander
+
+[Service]
+ExecStart=/home/pi/expander/expander.bash
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
