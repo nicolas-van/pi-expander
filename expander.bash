@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 function playnote() {
   NOTE=$1
   DURATION=$2
